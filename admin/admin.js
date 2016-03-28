@@ -164,15 +164,12 @@ angular.module('myApp.admin',['ngRoute'])
 
         //搜索
         $scope.searchMember= function (searchKey,searchValue) {
-            console.log(searchKey);
-            console.log(searchValue);
-            if(searchKey && searchValue){
-                var obj=$scope.memberInfoData;
-                searchValue = parseInt(searchValue);
-                console.log(obj);
-                console.log(obj.searchKey);
-                return (obj.searchKey == searchValue) ? obj : {};
-            }
+            angular.forEach($scope.memberInfoData, function (value,key) {
+                if(searchKey && searchValue){
+                    searchValue = parseInt(searchValue);
+                   return (value.searchKey == searchValue) ? value : {};
+                }
+            });
         };
 
         //禁言会员
