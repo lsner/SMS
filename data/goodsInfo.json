@@ -1,0 +1,86 @@
+[
+  {
+    "goodsId": 1001,
+    "goodsName": "包包1",
+    "goodsImage": "images/goodsImg/包包1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 1
+  },
+  {
+    "goodsId": 1002,
+    "goodsName": "包包2",
+    "goodsImage": "images/goodsImg/包包2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 1
+  },
+  {
+    "goodsId": 1003,
+    "goodsName": "学习1",
+    "goodsImage": "images/goodsImg/学习1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 2
+  },
+  {
+    "goodsId": 1004,
+    "goodsName": "学习2",
+    "goodsImage": "images/goodsImg/学习2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 2
+  },
+  {
+    "goodsId": 1005,
+    "goodsName": "手机配件1",
+    "goodsImage": "images/goodsImg/手机配件1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 3
+  },
+  {
+    "goodsId": 1006,
+    "goodsName": "手机配件2",
+    "goodsImage": "images/goodsImg/手机配件2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 3
+  },
+  {
+    "goodsId": 1007,
+    "goodsName": "装饰品1",
+    "goodsImage": "images/goodsImg/装饰品1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 4
+  },
+  {
+    "goodsId": 1008,
+    "goodsName": "装饰品2",
+    "goodsImage": "images/goodsImg/装饰品2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 4
+  },
+  {
+    "goodsId": 1009,
+    "goodsName": "钟表1",
+    "goodsImage": "images/goodsImg/钟表1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 5
+  },
+  {
+    "goodsId": 1010,
+    "goodsName": "钟表2",
+    "goodsImage": "images/goodsImg/钟表2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 5
+  },
+  {
+    "goodsId": 1011,
+    "goodsName": "餐具1",
+    "goodsImage": "images/goodsImg/餐具1.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 6
+  },
+  {
+    "goodsId": 1012,
+    "goodsName": "餐具2",
+    "goodsImage": "images/goodsImg/餐具2.jpg",
+    "goodsPrice": 120.8,
+    "goodsType": 6
+  }
+]

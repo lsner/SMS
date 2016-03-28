@@ -1,0 +1,30 @@
+<div class="panel panel-default col-md-3 panel-style"
+     style="background-color: #2e2e2e;color:#fcfcfc;margin-left: 500px;margin-top: 150px" ng-controller="loginCtrl">
+    <div class="panel-body">
+        <form name="loginForm" class="form-horizontal" ng-submit="loginServer()" novalidate>
+            <div class="col-md-offset-5">
+                <h3>SMS</h3>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8 input-group">
+                    <span class="input-group-addon glyphicon glyphicon-user" style="position: static"></span>
+                    <input type="text" class="form-control" name="name" ng-model="name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8 input-group">
+                    <span class="input-group-addon glyphicon glyphicon-lock" style="position: static"></span>
+                    <input type="password" class="form-control" name="password" ng-model="password" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8" style="padding: 0px">
+                    <button type="submit" class="btn btn-info col-md-12"
+                            ng-disabled="loginForm.name.$dirty && loginForm.name.$invalid ||
+                            loginForm.password.$dirty && loginForm.password.$invalid">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

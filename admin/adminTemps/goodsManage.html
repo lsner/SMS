@@ -1,0 +1,158 @@
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <th><input type="checkbox" ng-model="isSelectAll" ng-click="selectAll(isSelectAll)"/></th>
+        <th>商品编号</th>
+        <th>商品名称</th>
+        <th>商品图片</th>
+        <th>商品价格</th>
+        <th>商品类别</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="good in goodsInfoData">
+            <td><input type="checkbox" ng-model="good.checked"/></td>
+            <td>{{good.goodsId}}</td>
+            <td>{{good.goodsName}}</td>
+            <td>
+                <img src="{{good.goodsImage}}" style="height: 50px;width: 50px">
+            </td>
+            <td>{{good.goodsPrice}}</td>
+            <td>{{good.goodsType}}</td>
+            <td>
+                <button class="badge remove-highLight-border"
+                        data-toggle="modal" data-target="#goodsEdit" ng-click="editGoods(good)">编辑</button>
+                <button class="badge remove-highLight-border" ng-click="delGoods(good)">删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="btn-group">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#goodsAdd">添加</button>
+    <button class="btn btn-primary" ng-click="delAll()">删除</button>
+</div>
+
+
+<!--编辑商品modal-->
+<div class="modal fade" id="goodsEdit" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 400px">
+        <div class="modal-content">
+            <div class="modal-header modal-header-style">
+                <h5 class="modal-title modal-title-style">
+                    编辑商品
+                </h5>
+            </div>
+
+            <div style="height:140px">
+                <div style="width: 130px;float: left">
+                    <image id="editImgPre" style="height: 100px;width: 100px" src="{{preSaveInfo.goodsImage}}" />
+                </div>
+                <div style="width: 250px;float: left">
+                    <div>
+                        <label class="lable-control">商品编号:</label>
+                        <input class="input-control not-edit" type="text" ng-model="preSaveInfo.goodsId" readonly>
+                    </div>
+                    <div>
+                        <label class="lable-control">商品名称:</label>
+                        <input class="input-control" type="text" ng-model="preSaveInfo.goodsName">
+                    </div>
+                    <div>
+                        <label class="lable-control">商品价格:</label>
+                        <input class="input-control" type="text" ng-model="preSaveInfo.goodsPrice">
+                    </div>
+                    <div>
+                        <label class="lable-control">商品类别:</label>
+                        <input class="input-control" type="text" ng-model="preSaveInfo.goodsType">
+                    </div>
+                </div>
+
+                <div>
+                    <input type="file" id="editImg" name="editImg" ng-model="preSaveInfo.goodsImage"
+                           onchange="preImg(this.id,'editImgPre')" style="float: left;margin-left: 5px">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn modal-confirm-btn" data-dismiss="modal" ng-click="saveGoodsInfo(preSaveInfo)">确定</button>
+                <button class="btn modal-dismiss-btn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加商品modal-->
+<div class="modal fade" id="goodsAdd" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 400px">
+        <div class="modal-content">
+            <div class="modal-header modal-header-style">
+                <h5 class="modal-title modal-title-style">
+                    添加商品
+                </h5>
+            </div>
+
+            <div style="height:140px">
+                <div style="width: 130px;float: left">
+                    <image id="addImgPre" style="height: 100px;width: 100px" src="" />
+                </div>
+                <div style="width: 250px;float: left">
+                    <div>
+                        <label class="lable-control">商品编号:</label>
+                        <input class="input-control" type="text" ng-model="addGoodsInfo.goodsId">
+                    </div>
+                    <div>
+                        <label class="lable-control">商品名称:</label>
+                        <input class="input-control" type="text" ng-model="addGoodsInfo.goodsName">
+                    </div>
+                    <div>
+                        <label class="lable-control">商品价格:</label>
+                        <input class="input-control" type="text" ng-model="addGoodsInfo.goodsPrice">
+                    </div>
+                    <div>
+                        <label class="lable-control">商品类别:</label>
+                        <input class="input-control" type="text" ng-model="addGoodsInfo.goodsType">
+                    </div>
+                </div>
+
+                <div>
+                    <input type="file" name="addImg" id="addImg" ng-model="addGoodsInfo.goodsImage"
+                           onchange="preImg(this.id,'addImgPre')" style="float: left;margin-left: 5px" >
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn modal-confirm-btn" data-dismiss="modal" ng-click="addGoods()">确定</button>
+                <button class="btn modal-dismiss-btn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    /**
+     * 从 file 域获取 本地图片 url
+     */
+    function getFileUrl(sourceId) {
+        var url;
+        if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
+            url = document.getElementById(sourceId).value;
+        } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+            url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+        } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+            url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+        }
+        return url;
+    }
+
+    /**
+     * 将本地图片 显示到浏览器上
+     */
+    function preImg(sourceId, targetId) {
+        var url = getFileUrl(sourceId);
+        var imgPre = document.getElementById(targetId);
+        imgPre.src = url;
+    }
+</script>

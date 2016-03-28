@@ -1,0 +1,93 @@
+
+.font-color{
+    color:#fcfcfc;
+}
+/*左侧商品菜单*/
+.left-list-font{
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 5px;
+    padding-right: 0px;
+}
+.left-list-select{
+    background-color: #d4d4d4;
+}
+/*模态框样式*/
+.modal-header-style{
+    height:40px;
+    border-radius: 3px;
+    background-color: #337ab7;
+}
+.modal-title-style{
+    font-size: 16px;
+    font-weight: 700;
+    color:#fcfcfc;
+}
+.modal-confirm-btn{
+    color:#fcfcfc;
+    background-color:#337ab7;
+}
+.modal-dismiss-btn{
+    color:#fcfcfc;
+    background-color: #979797;
+}
+.lable-control{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.input-control{
+    width: 100px;
+    border-radius: 2px;
+    border-style: hidden;
+    border:1px solid #979797;
+}
+.not-edit{
+    background-color: #d4d4d4;
+}
+
+/*去除边框样式*/
+.remove-highLight-border{
+    border-left-style: hidden;
+    border-top-style: hidden;
+}
+/*会员等级*/
+.level-color{
+    color: #f30013;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/*轮播*/
+.banner { position: relative; overflow: auto; }
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+.unslider ol{
+    display: none;
+}
+.unslider-arrow{
+    position: absolute;
+    left: 143px;
+    top:309px;
+    z-index: 2;
+    cursor: pointer;
+}
+.unslider-arrow.next{
+    color:#fcfcfc ;
+    position: absolute;
+    right: 150px;
+    top:309px;
+    z-index: 2;
+    cursor: pointer;
+    text-decoration: none;
+}
+.unslider-arrow.prev{
+    color:#fcfcfc;
+    text-decoration: none;
+}
+.unslider-arrow.prev:before{
+    content: url("images/prev.png");
+}
+.unslider-arrow.next:after{
+    content: url("images/next.png");
+}
+

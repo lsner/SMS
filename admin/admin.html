@@ -1,0 +1,39 @@
+<div ng-controller="adminCtrl">
+    <div class="row">
+        <div class="col-lg-1">
+            <div class="panel panel-default panel-style">
+                <div class="list-group">
+                    <a class="list-group-item left-list-font" ng-click="setIndex(0)" ng-class="{true:'left-list-select'}[goodsManageShow]">
+                        <i class="glyphicon glyphicon-th-list"></i>
+                        商品管理
+                    </a>
+                    <a class="list-group-item left-list-font" ng-click="setIndex(1)" ng-class="{true:'left-list-select'}[goodsRecommendShow]">
+                        <i class="glyphicon glyphicon-heart"></i>
+                        商品推荐
+                    </a>
+                    <a class="list-group-item left-list-font" ng-click="setIndex(2)" ng-class="{true:'left-list-select'}[orderManageShow]">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        订单管理
+                    </a>
+                    <a class="list-group-item left-list-font" ng-click="setIndex(3)" ng-class="{true:'left-list-select'}[memberManageShow]">
+                        <i class="glyphicon glyphicon-user"></i>
+                        会员管理
+                    </a>
+                    <a class="list-group-item left-list-font" ng-click="setIndex(4)" ng-class="{true:'left-list-select'}[reportFormShow]">
+                        <i class="glyphicon glyphicon-signal"></i>
+                        统计报表
+                    </a>
+                    <a class="list-group-item left-list-font" ng-click="setIndex(5)" ng-class="{true:'left-list-select'}[messageManageShow]">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        留言管理
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div ng-include="'admin/adminTemps/goodsManage.html'" ng-show="goodsManageShow"></div>
+            <div ng-include="'admin/adminTemps/memberManage.html'" ng-show="memberManageShow"></div>
+        </div>
+    </div>
+</div>

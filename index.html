@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My AngularJS App</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/unslider/unslider.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="lib/JQuery/jquery-1.11.3.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+
+
+</head>
+
+<body>
+    <header ng-include="'templates/navBar.html'" ng-show="alreadyLogin" style="height: 50px"></header>
+    <div ng-view>
+
+    </div>
+
+    <script src="lib/JQuery/jquery-1.11.3.js"></script>
+    <script src="lib/unslider/unslider.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+    <script src="common/data.js"></script>
+    <script src="app.js"></script>
+    <script src="common/directive.js"></script>
+    <script src="common/service.js"></script>
+    <script src="common/filter.js"></script>
+    <script src="login/login.js"></script>
+    <script src="member/member.js"></script>
+    <script src="admin/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<div ng-controller="memberCtrl">
+
+    <!--轮播-->
+    <div class="row">
+        <div class="banner" style="position: absolute;left: 130px">
+            <ul>
+                <li><img style="height:500px;width: 1100px" src="./images/轮播1.jpg"></li>
+                <li><img style="height:500px;width: 1100px" src="./images/轮播2.jpg"></li>
+                <li><img style="height:500px;width: 1100px" src="./images/轮播3.jpg"></li>
+                <li><img style="height:500px;width: 1100px" src="./images/轮播4.jpg"></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--购物车-->
+    <div class="row">
+        <div style="padding-left:15px;padding-right:15px;top:510px;left:130px;" class="col-xs-2 xs-hide">
+            <div style="font-size:16px;height: 40px; line-height: 40px; background-color: #2e2e2e; width: 100%;color: white">
+                <span style="font-size: 18px;padding-left: 15px" class="glyphicon glyphicon-shopping-cart"></span>
+                <span><a herf="" style="color: #ffffff;padding-left: 10px">购物车</a></span>
+                <span><a herf="" style="color: #ffffff;padding-left: 10px">0</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!--商品展示-->
+    <div class="row" style="width: 1100px;position:absolute;top:612px;left:130px;padding-left: 15px;">
+        <table>
+            <tr>
+                <td ng-repeat="good in goodsInfoData"><img style="float:left;height: 200px;width: 180px" src="{{good.goodsImage}}"></td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    jQuery(document).ready(function($) {
+        $('.banner').unslider({
+            autoplay: true,
+            speed:1000,
+            dots: false,               //  显示导航点
+            fluid: true,               //  支持响应式设计
+            arrow:true
+        });
+    });
+
+</script>
+

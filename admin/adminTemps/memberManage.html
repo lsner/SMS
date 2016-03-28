@@ -1,0 +1,38 @@
+<div class="collapse navbar-collapse">
+    <form action="javascript:void(0)" ng-submit="" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <select class="form-control" ng-model="searchKey">
+                <option value="">请选择</option>
+                <option value="memberId">会员编号</option>
+                <option value="memberName">姓名</option>
+            </select>
+            <input type="text" class="form-control" ng-model="searchValue" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="searchMember(searchKey,searchValue)">搜索</button>
+    </form>
+</div>
+
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+    <th><input type="checkbox"/></th>
+    <th>会员编号</th>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>联系方式</th>
+    <th>会员等级</th>
+    <th>操作</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="member in memberInfoData">
+        <td><input type="checkbox"/></td>
+        <td>{{member.memberId}}</td>
+        <td>{{member.memberName}}</td>
+        <td>{{member.memberSex}}</td>
+        <td>{{member.memberPhone}}</td>
+        <td class="level-color">{{member.memberLevel}}</td>
+        <td>
+            <button class="badge remove-highLight-border" ng-click="forbidMember()">禁言</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

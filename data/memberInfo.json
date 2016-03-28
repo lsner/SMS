@@ -1,0 +1,16 @@
+[
+  {
+    "memberId": 1,
+    "memberName": "小白",
+    "memberSex": "女",
+    "memberPhone": 1234567,
+    "memberLevel": "vip1"
+  },
+  {
+    "memberId": 2,
+    "memberName": "小黑",
+    "memberSex": "男",
+    "memberPhone": 123,
+    "memberLevel": "vip4"
+  }
+]
