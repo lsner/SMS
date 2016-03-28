@@ -164,10 +164,15 @@ angular.module('myApp.admin',['ngRoute'])
 
         //搜索
         $scope.searchMember= function (searchKey,searchValue) {
+            console.log(searchKey);
             angular.forEach($scope.memberInfoData, function (value,key) {
+                console.log(value);
                 if(searchKey && searchValue){
                     searchValue = parseInt(searchValue);
-                   return (value.searchKey == searchValue) ? value : {};
+                   if (value.searchKey == searchValue){
+                       alert(1111);
+                   };
+
                 }
             });
         };
